@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PSController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SaranaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,10 @@ Route::prefix('prodi')->group(function (){
 });
 
 Route::get('/news/{id}', [NewsController::class, 'index']);
+
+Route::prefix('sarana')->group(function (){
+    Route::get('/perkantoran', [SaranaController::class, 'kantor']);
+    Route::get('/laboratorium', [SaranaController::class, 'lab']);
+    Route::get('/kelas', [SaranaController::class, 'kelas']);
+    Route::get('/lainnya', [SaranaController::class, 'lain']);
+});
