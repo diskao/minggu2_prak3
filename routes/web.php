@@ -6,6 +6,7 @@ use App\Http\Controllers\PSController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SaranaController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +39,5 @@ Route::prefix('sarana')->group(function (){
 });
 
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/comment/{nama}/{pesan}', [CommentController::class, 'index']);
