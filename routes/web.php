@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PSController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,7 @@ Route::get('/', function () {
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::prefix('prodi')->group(function (){
+    Route::get('/Manajemen-Informatika', [PSController::class, 'MI']);
+    Route::get('/Teknik-Informatika', [PSController::class, 'TI']);
+});
