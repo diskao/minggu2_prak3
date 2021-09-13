@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PSController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SaranaController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,5 @@ Route::prefix('sarana')->group(function (){
     Route::get('/kelas', [SaranaController::class, 'kelas']);
     Route::get('/lainnya', [SaranaController::class, 'lain']);
 });
+
+Route::get('/about', [AboutController::class, 'index']);
