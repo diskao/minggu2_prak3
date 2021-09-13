@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PSController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,5 @@ Route::prefix('prodi')->group(function (){
     Route::get('/Manajemen-Informatika', [PSController::class, 'MI']);
     Route::get('/Teknik-Informatika', [PSController::class, 'TI']);
 });
+
+Route::get('/news/{id}', [NewsController::class, 'index']);
